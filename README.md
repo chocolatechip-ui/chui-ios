@@ -1,6 +1,6 @@
-#chui-ios
+# chui-ios
 
-This is a node command-line tool that enables you to create a hybrid app container for your ChocolateChip-UI app that opens in Xcode and runs on iOS. 
+This is a node command-line tool that enables you to create a hybrid app container for your ChocolateChip-UI app that opens in Xcode and runs on iOS. It will wrap your Web app in a <a href="https://developer.apple.com/swift/" target="_blank">Swift</a> Web view. It expects the following parameters:
 
 ##Installation
 
