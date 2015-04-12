@@ -82,7 +82,7 @@ exports.infoPlist = '<?xml version="1.0" encoding="UTF-8"?>\n\
   <key>CFBundleExecutable</key>\n\
   <string>$(EXECUTABLE_NAME)</string>\n\
   <key>CFBundleIdentifier</key>\n\
-  <string>' + argv.proj.toLowerCase() + '.$(PRODUCT_NAME:rfc1034identifier)</string>\n\
+  <string>' + argv.proj + '.$(PRODUCT_NAME:rfc1034identifier)</string>\n\
   <key>CFBundleInfoDictionaryVersion</key>\n\
   <string>6.0</string>\n\
   <key>CFBundleName</key>\n\
@@ -130,7 +130,7 @@ exports.mainStoryboard = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <!--View Controller-->\n\
         <scene sceneID="tne-QT-ifu">\n\
             <objects>\n\
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="' + argv.proj.toLowerCase() + '" customModuleProvider="target" sceneMemberID="viewController">\n\
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="' + argv.proj + '" customModuleProvider="target" sceneMemberID="viewController">\n\
                     <layoutGuides>\n\
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>\n\
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>\n\
@@ -167,7 +167,8 @@ exports.mainStoryboard = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     </scenes>\n\
 </document>';
 
-exports.appiconsetWithoutIcons = '{\n\
+
+exports.appiconsetWithout = '{\n\
   "images" : [\n\
     {\n\
       "idiom" : "iphone",\n\
@@ -190,17 +191,6 @@ exports.appiconsetWithoutIcons = '{\n\
       "scale" : "3x"\n\
     },\n\
     {\n\
-      "size" : "57x57",\n\
-      "idiom" : "iphone",\n\
-      "filename" : "AppIcon.png",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "idiom" : "iphone",\n\
-      "size" : "57x57",\n\
-      "scale" : "2x"\n\
-    },\n\
-    {\n\
       "size" : "60x60",\n\
       "idiom" : "iphone",\n\
       "scale" : "2x"\n\
@@ -210,56 +200,6 @@ exports.appiconsetWithoutIcons = '{\n\
       "idiom" : "iphone",\n\
       "scale" : "3x"\n\
     },\n\
-    {\n\
-      "idiom" : "ipad",\n\
-      "size" : "29x29",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "idiom" : "ipad",\n\
-      "size" : "29x29",\n\
-      "scale" : "2x"\n\
-    },\n\
-    {\n\
-      "size" : "40x40",\n\
-      "idiom" : "ipad",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "size" : "40x40",\n\
-      "idiom" : "ipad",\n\
-      "scale" : "2x"\n\
-    },\n\
-    {\n\
-      "idiom" : "ipad",\n\
-      "size" : "50x50",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "idiom" : "ipad",\n\
-      "size" : "50x50",\n\
-      "scale" : "2x"\n\
-    },\n\
-    {\n\
-      "size" : "72x72",\n\
-      "idiom" : "ipad",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "size" : "72x72",\n\
-      "idiom" : "ipad",\n\
-      "scale" : "2x"\n\
-    },\n\
-    {\n\
-      "size" : "76x76",\n\
-      "idiom" : "ipad",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "size" : "76x76",\n\
-      "idiom" : "ipad",\n\
-      "scale" : "2x"\n\
-    }\n\
   ],\n\
   "info" : {\n\
     "version" : 1,\n\
@@ -267,39 +207,31 @@ exports.appiconsetWithoutIcons = '{\n\
   }\n\
 }';
 
-exports.appiconsetWithIcons = '{\n\
+exports.appiconset = '{\n\
   "images" : [\n\
     {\n\
-      "idiom" : "iphone",\n\
       "size" : "29x29",\n\
+      "idiom" : "iphone",\n\
+      "filename" : "AppIcon-29@2x.png",\n\
       "scale" : "2x"\n\
     },\n\
     {\n\
-      "idiom" : "iphone",\n\
       "size" : "29x29",\n\
+      "idiom" : "iphone",\n\
+      "filename" : "AppIcon-29@3x.png",\n\
       "scale" : "3x"\n\
-    },\n\
-    {\n\
-      "idiom" : "iphone",\n\
-      "size" : "40x40",\n\
-      "scale" : "2x"\n\
     },\n\
     {\n\
       "size" : "40x40",\n\
       "idiom" : "iphone",\n\
-      "filename" : "AppIcon-Small-40@3x.png",\n\
-      "scale" : "3x"\n\
-    },\n\
-    {\n\
-      "size" : "57x57",\n\
-      "idiom" : "iphone",\n\
-      "filename" : "AppIcon.png",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "idiom" : "iphone",\n\
-      "size" : "57x57",\n\
+      "filename" : "AppIcon-40@2x.png",\n\
       "scale" : "2x"\n\
+    },\n\
+    {\n\
+      "size" : "40x40",\n\
+      "idiom" : "iphone",\n\
+      "filename" : "AppIcon-40@3x.png",\n\
+      "scale" : "3x"\n\
     },\n\
     {\n\
       "size" : "60x60",\n\
@@ -313,61 +245,26 @@ exports.appiconsetWithIcons = '{\n\
       "filename" : "AppIcon-60@3x.png",\n\
       "scale" : "3x"\n\
     },\n\
+  ],\n\
+  "info" : {\n\
+    "version" : 1,\n\
+    "author" : "xcode"\n\
+  }\n\
+}';
+
+exports.itunesartworkWithout = '{\n\
+  "images" : [\n\
     {\n\
-      "idiom" : "ipad",\n\
-      "size" : "29x29",\n\
-      "scale" : "1x"\n\
+      "idiom" : "iphone",\n\
+      "scale" : "1x",\n\
     },\n\
     {\n\
-      "idiom" : "ipad",\n\
-      "size" : "29x29",\n\
-      "scale" : "2x"\n\
+      "idiom" : "iphone",\n\
+      "scale" : "2x",\n\
     },\n\
     {\n\
-      "size" : "40x40",\n\
-      "idiom" : "ipad",\n\
-      "filename" : "AppIcon-Small-40.png",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "size" : "40x40",\n\
-      "idiom" : "ipad",\n\
-      "filename" : "AppIcon-Small-40@2x.png",\n\
-      "scale" : "2x"\n\
-    },\n\
-    {\n\
-      "idiom" : "ipad",\n\
-      "size" : "50x50",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "idiom" : "ipad",\n\
-      "size" : "50x50",\n\
-      "scale" : "2x"\n\
-    },\n\
-    {\n\
-      "size" : "72x72",\n\
-      "idiom" : "ipad",\n\
-      "filename" : "AppIcon-ipad.png",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "size" : "72x72",\n\
-      "idiom" : "ipad",\n\
-      "filename" : "AppIcon-ipad@2x.png",\n\
-      "scale" : "2x"\n\
-    },\n\
-    {\n\
-      "size" : "76x76",\n\
-      "idiom" : "ipad",\n\
-      "filename" : "AppIcon-76.png",\n\
-      "scale" : "1x"\n\
-    },\n\
-    {\n\
-      "size" : "76x76",\n\
-      "idiom" : "ipad",\n\
-      "filename" : "AppIcon-76@2x.png",\n\
-      "scale" : "2x"\n\
+      "idiom" : "iphone",\n\
+      "scale" : "3x",\n\
     }\n\
   ],\n\
   "info" : {\n\
@@ -379,18 +276,78 @@ exports.appiconsetWithIcons = '{\n\
 exports.itunesartwork = '{\n\
   "images" : [\n\
     {\n\
-      "idiom" : "universal",\n\
+      "idiom" : "iphone",\n\
       "scale" : "1x",\n\
       "filename" : "iTunesArtwork.png"\n\
     },\n\
     {\n\
-      "idiom" : "universal",\n\
+      "idiom" : "iphone",\n\
       "scale" : "2x",\n\
       "filename" : "iTunesArtwork@2x.png"\n\
     },\n\
     {\n\
-      "idiom" : "universal",\n\
+      "idiom" : "iphone",\n\
+      "scale" : "3x",\n\
+      "filename" : "iTunesArtwork@3x.png"\n\
+    }\n\
+  ],\n\
+  "info" : {\n\
+    "version" : 1,\n\
+    "author" : "xcode"\n\
+  }\n\
+}';
+
+exports.launchimagesWithout = '{\n\
+  "images" : [\n\
+    {\n\
+      "extent" : "full-screen",\n\
+      "idiom" : "iphone",\n\
+      "subtype" : "736h",\n\
+      "minimum-system-version" : "8.0",\n\
+      "orientation" : "portrait",\n\
       "scale" : "3x"\n\
+    },\n\
+    {\n\
+      "extent" : "full-screen",\n\
+      "idiom" : "iphone",\n\
+      "subtype" : "667h",\n\
+      "minimum-system-version" : "8.0",\n\
+      "orientation" : "portrait",\n\
+      "scale" : "2x"\n\
+    },\n\
+    {\n\
+      "orientation" : "portrait",\n\
+      "idiom" : "iphone",\n\
+      "extent" : "full-screen",\n\
+      "minimum-system-version" : "7.0",\n\
+      "scale" : "2x"\n\
+    },\n\
+    {\n\
+      "extent" : "full-screen",\n\
+      "idiom" : "iphone",\n\
+      "subtype" : "retina4",\n\
+      "minimum-system-version" : "7.0",\n\
+      "orientation" : "portrait",\n\
+      "scale" : "2x"\n\
+    },\n\
+    {\n\
+      "orientation" : "portrait",\n\
+      "idiom" : "iphone",\n\
+      "extent" : "full-screen",\n\
+      "scale" : "1x"\n\
+    },\n\
+    {\n\
+      "orientation" : "portrait",\n\
+      "idiom" : "iphone",\n\
+      "extent" : "full-screen",\n\
+      "scale" : "2x"\n\
+    },\n\
+    {\n\
+      "orientation" : "portrait",\n\
+      "idiom" : "iphone",\n\
+      "extent" : "full-screen",\n\
+      "subtype" : "retina4",\n\
+      "scale" : "2x"\n\
     }\n\
   ],\n\
   "info" : {\n\
@@ -402,40 +359,62 @@ exports.itunesartwork = '{\n\
 exports.launchimages = '{\n\
   "images" : [\n\
     {\n\
+      "extent" : "full-screen",\n\
       "idiom" : "iphone",\n\
-      "scale" : "2x",\n\
-      "orientation" : "portrait",\n\
-    "extent" : "full-screen",\n\
-      "minimum-system-version" : "7.0",\n\
-      "subtype" : "retina4",\n\
-      "filename" : "LaunchImage-568h@2x~iphone.png"\n\
-    },\n\
-    {\n\
-      "idiom" : "iphone",\n\
-      "scale" : "2x",\n\
-      "orientation" : "portrait",\n\
-    "extent" : "full-screen",\n\
-      "minimum-system-version" : "8.0",\n\
-      "subtype" : "667h",\n\
-      "filename" : "LaunchImage-667h@2x~iphone.png"\n\
-    },\n\
-    {\n\
-      "idiom" : "iphone",\n\
-      "scale" : "3x",\n\
-      "orientation" : "portrait",\n\
-    "extent" : "full-screen",\n\
-      "minimum-system-version" : "8.0",\n\
       "subtype" : "736h",\n\
-      "filename" : "LaunchImage-736h@3x~iphone.png"\n\
+      "filename" : "LaunchImage-736h@3x~iphone.png",\n\
+      "minimum-system-version" : "8.0",\n\
+      "orientation" : "portrait",\n\
+      "scale" : "3x"\n\
     },\n\
     {\n\
+      "extent" : "full-screen",\n\
       "idiom" : "iphone",\n\
-      "scale" : "2x",\n\
+      "subtype" : "667h",\n\
+      "filename" : "LaunchImage-667h@2x~iphone.png",\n\
+      "minimum-system-version" : "8.0",\n\
       "orientation" : "portrait",\n\
-    "extent" : "full-screen",\n\
-      "minimum-system-version" : "7.0",\n\
-      "filename" : "LaunchImage@2x~iphone.png"\n\
+      "scale" : "2x"\n\
     },\n\
+    {\n\
+      "orientation" : "portrait",\n\
+      "idiom" : "iphone",\n\
+      "extent" : "full-screen",\n\
+      "minimum-system-version" : "7.0",\n\
+      "filename" : "LaunchImage@2x~iphone.png",\n\
+      "scale" : "2x"\n\
+    },\n\
+    {\n\
+      "extent" : "full-screen",\n\
+      "idiom" : "iphone",\n\
+      "subtype" : "retina4",\n\
+      "filename" : "LaunchImage-568h@2x~iphone.png",\n\
+      "minimum-system-version" : "7.0",\n\
+      "orientation" : "portrait",\n\
+      "scale" : "2x"\n\
+    },\n\
+    {\n\
+      "orientation" : "portrait",\n\
+      "idiom" : "iphone",\n\
+      "extent" : "full-screen",\n\
+      "filename" : "LaunchImage~iphone.png",\n\
+      "scale" : "1x"\n\
+    },\n\
+    {\n\
+      "orientation" : "portrait",\n\
+      "idiom" : "iphone",\n\
+      "extent" : "full-screen",\n\
+      "filename" : "LaunchImage@2x~iphone.png",\n\
+      "scale" : "2x"\n\
+    },\n\
+    {\n\
+      "orientation" : "portrait",\n\
+      "idiom" : "iphone",\n\
+      "extent" : "full-screen",\n\
+      "filename" : "LaunchImage-568h@2x~iphone.png",\n\
+      "subtype" : "retina4",\n\
+      "scale" : "2x"\n\
+    }\n\
   ],\n\
   "info" : {\n\
     "version" : 1,\n\
@@ -460,9 +439,9 @@ exports.xcscheme = '<?xml version="1.0" encoding="UTF-8"?>\n\
             <BuildableReference\n\
                BuildableIdentifier = "primary"\n\
                BlueprintIdentifier = "53AD62B81A91208300115D9B"\n\
-               BuildableName = "' + argv.proj.toLowerCase() + '.app"\n\
-               BlueprintName = "' + argv.proj.toLowerCase() + '"\n\
-               ReferencedContainer = "container:' + argv.proj.toLowerCase() + '.xcodeproj">\n\
+               BuildableName = "' + argv.proj + '.app"\n\
+               BlueprintName = "' + argv.proj + '"\n\
+               ReferencedContainer = "container:' + argv.proj + '.xcodeproj">\n\
             </BuildableReference>\n\
          </BuildActionEntry>\n\
          <BuildActionEntry\n\
@@ -474,9 +453,9 @@ exports.xcscheme = '<?xml version="1.0" encoding="UTF-8"?>\n\
             <BuildableReference\n\
                BuildableIdentifier = "primary"\n\
                BlueprintIdentifier = "53AD62CD1A91208300115D9B"\n\
-               BuildableName = "' + argv.proj.toLowerCase() + 'Tests.xctest"\n\
-               BlueprintName = "' + argv.proj.toLowerCase() + 'Tests"\n\
-               ReferencedContainer = "container:' + argv.proj.toLowerCase() + '.xcodeproj">\n\
+               BuildableName = "' + argv.proj + 'Tests.xctest"\n\
+               BlueprintName = "' + argv.proj + 'Tests"\n\
+               ReferencedContainer = "container:' + argv.proj + '.xcodeproj">\n\
             </BuildableReference>\n\
          </BuildActionEntry>\n\
       </BuildActionEntries>\n\
@@ -492,9 +471,9 @@ exports.xcscheme = '<?xml version="1.0" encoding="UTF-8"?>\n\
             <BuildableReference\n\
                BuildableIdentifier = "primary"\n\
                BlueprintIdentifier = "53AD62CD1A91208300115D9B"\n\
-               BuildableName = "' + argv.proj.toLowerCase() + 'Tests.xctest"\n\
-               BlueprintName = "' + argv.proj.toLowerCase() + 'Tests"\n\
-               ReferencedContainer = "container:' + argv.proj.toLowerCase() + '.xcodeproj">\n\
+               BuildableName = "' + argv.proj + 'Tests.xctest"\n\
+               BlueprintName = "' + argv.proj + 'Tests"\n\
+               ReferencedContainer = "container:' + argv.proj + '.xcodeproj">\n\
             </BuildableReference>\n\
          </TestableReference>\n\
       </Testables>\n\
@@ -502,9 +481,9 @@ exports.xcscheme = '<?xml version="1.0" encoding="UTF-8"?>\n\
          <BuildableReference\n\
             BuildableIdentifier = "primary"\n\
             BlueprintIdentifier = "53AD62B81A91208300115D9B"\n\
-            BuildableName = "' + argv.proj.toLowerCase() + '.app"\n\
-            BlueprintName = "' + argv.proj.toLowerCase() + '"\n\
-            ReferencedContainer = "container:' + argv.proj.toLowerCase() + '.xcodeproj">\n\
+            BuildableName = "' + argv.proj + '.app"\n\
+            BlueprintName = "' + argv.proj + '"\n\
+            ReferencedContainer = "container:' + argv.proj + '.xcodeproj">\n\
          </BuildableReference>\n\
       </MacroExpansion>\n\
    </TestAction>\n\
@@ -521,9 +500,9 @@ exports.xcscheme = '<?xml version="1.0" encoding="UTF-8"?>\n\
          <BuildableReference\n\
             BuildableIdentifier = "primary"\n\
             BlueprintIdentifier = "53AD62B81A91208300115D9B"\n\
-            BuildableName = "' + argv.proj.toLowerCase() + '.app"\n\
-            BlueprintName = "' + argv.proj.toLowerCase() + '"\n\
-            ReferencedContainer = "container:' + argv.proj.toLowerCase() + '.xcodeproj">\n\
+            BuildableName = "' + argv.proj + '.app"\n\
+            BlueprintName = "' + argv.proj + '"\n\
+            ReferencedContainer = "container:' + argv.proj + '.xcodeproj">\n\
          </BuildableReference>\n\
       </BuildableProductRunnable>\n\
       <AdditionalOptions>\n\
@@ -539,9 +518,9 @@ exports.xcscheme = '<?xml version="1.0" encoding="UTF-8"?>\n\
          <BuildableReference\n\
             BuildableIdentifier = "primary"\n\
             BlueprintIdentifier = "53AD62B81A91208300115D9B"\n\
-            BuildableName = "' + argv.proj.toLowerCase() + '.app"\n\
-            BlueprintName = "' + argv.proj.toLowerCase() + '"\n\
-            ReferencedContainer = "container:' + argv.proj.toLowerCase() + '.xcodeproj">\n\
+            BuildableName = "' + argv.proj + '.app"\n\
+            BlueprintName = "' + argv.proj + '"\n\
+            ReferencedContainer = "container:' + argv.proj + '.xcodeproj">\n\
          </BuildableReference>\n\
       </BuildableProductRunnable>\n\
    </ProfileAction>\n\
@@ -560,7 +539,7 @@ exports.xcschememanagement = '<?xml version="1.0" encoding="UTF-8"?>\n\
 <dict>\n\
   <key>SchemeUserState</key>\n\
   <dict>\n\
-    <key>' + argv.proj.toLowerCase() + '.xcscheme</key>\n\
+    <key>' + argv.proj + '.xcscheme</key>\n\
     <dict>\n\
       <key>orderHint</key>\n\
       <integer>0</integer>\n\
@@ -586,7 +565,7 @@ exports.xcworkspacedata = '<?xml version="1.0" encoding="UTF-8"?>\n\
 <Workspace\n\
    version = "1.0">\n\
    <FileRef\n\
-      location = "self:' + argv.proj.toLowerCase() + '.xcodeproj">\n\
+      location = "self:' + argv.proj + '.xcodeproj">\n\
    </FileRef>\n\
 </Workspace>';
 
@@ -604,7 +583,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
     53AD62C11A91208300115D9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AD62C01A91208300115D9B /* ViewController.swift */; };\n\
     53AD62C41A91208300115D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53AD62C21A91208300115D9B /* Main.storyboard */; };\n\
     53AD62C61A91208300115D9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53AD62C51A91208300115D9B /* Images.xcassets */; };\n\
-    53AD62D51A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AD62D41A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests.swift */; };\n\
+    53AD62D51A91208300115D9B /* ' + argv.proj + 'Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AD62D41A91208300115D9B /* ' + argv.proj + 'Tests.swift */; };\n\
 /* End PBXBuildFile section */\n\
 \n\
 /* Begin PBXContainerItemProxy section */\n\
@@ -613,21 +592,21 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       containerPortal = 53AD62B11A91208300115D9B /* Project object */;\n\
       proxyType = 1;\n\
       remoteGlobalIDString = 53AD62B81A91208300115D9B;\n\
-      remoteInfo = ' + argv.proj.toLowerCase() + ';\n\
+      remoteInfo = ' + argv.proj+ ';\n\
     };\n\
 /* End PBXContainerItemProxy section */\n\
 \n\
 /* Begin PBXFileReference section */\n\
     5317ED4F1A9127D70077FB35 /* Website */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Website; sourceTree = "<group>"; };\n\
-    53AD62B91A91208300115D9B /* ' + argv.proj.toLowerCase() + '.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ' + argv.proj.toLowerCase() + '.app; sourceTree = BUILT_PRODUCTS_DIR; };\n\
+    53AD62B91A91208300115D9B /* ' + argv.proj + '.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ' + argv.proj + '.app; sourceTree = BUILT_PRODUCTS_DIR; };\n\
     53AD62BD1A91208300115D9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };\n\
     53AD62BE1A91208300115D9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };\n\
     53AD62C01A91208300115D9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };\n\
     53AD62C31A91208300115D9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };\n\
     53AD62C51A91208300115D9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };\n\
-    53AD62CE1A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ' + argv.proj.toLowerCase() + 'Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };\n\
+    53AD62CE1A91208300115D9B /* ' + argv.proj + 'Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ' + argv.proj + 'Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };\n\
     53AD62D31A91208300115D9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };\n\
-    53AD62D41A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ' + argv.proj.toLowerCase() + 'Tests.swift; sourceTree = "<group>"; };\n\
+    53AD62D41A91208300115D9B /* ' + argv.proj + 'Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ' + argv.proj + 'Tests.swift; sourceTree = "<group>"; };\n\
 /* End PBXFileReference section */\n\
 \n\
 /* Begin PBXFrameworksBuildPhase section */\n\
@@ -657,8 +636,8 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       isa = PBXGroup;\n\
       children = (\n\
         5317ED4F1A9127D70077FB35 /* Website */,\n\
-        53AD62BB1A91208300115D9B /* ' + argv.proj.toLowerCase() + ' */,\n\
-        53AD62D11A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests */,\n\
+        53AD62BB1A91208300115D9B /* ' + argv.proj + ' */,\n\
+        53AD62D11A91208300115D9B /* ' + argv.proj + 'Tests */,\n\
         53AD62BA1A91208300115D9B /* Products */,\n\
       );\n\
       sourceTree = "<group>";\n\
@@ -666,13 +645,13 @@ exports.pbxproj = '// !$*UTF8*$!\n\
     53AD62BA1A91208300115D9B /* Products */ = {\n\
       isa = PBXGroup;\n\
       children = (\n\
-        53AD62B91A91208300115D9B /* ' + argv.proj.toLowerCase() + '.app */,\n\
-        53AD62CE1A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests.xctest */,\n\
+        53AD62B91A91208300115D9B /* ' + argv.proj + '.app */,\n\
+        53AD62CE1A91208300115D9B /* ' + argv.proj + 'Tests.xctest */,\n\
       );\n\
       name = Products;\n\
       sourceTree = "<group>";\n\
     };\n\
-    53AD62BB1A91208300115D9B /* ' + argv.proj.toLowerCase() + ' */ = {\n\
+    53AD62BB1A91208300115D9B /* ' + argv.proj + ' */ = {\n\
       isa = PBXGroup;\n\
       children = (\n\
         53AD62BE1A91208300115D9B /* AppDelegate.swift */,\n\
@@ -681,7 +660,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
         53AD62C51A91208300115D9B /* Images.xcassets */,\n\
         53AD62BC1A91208300115D9B /* Supporting Files */,\n\
       );\n\
-      path = ' + argv.proj.toLowerCase() + ';\n\
+      path = ' + argv.proj + ';\n\
       sourceTree = "<group>";\n\
     };\n\
     53AD62BC1A91208300115D9B /* Supporting Files */ = {\n\
@@ -692,13 +671,13 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       name = "Supporting Files";\n\
       sourceTree = "<group>";\n\
     };\n\
-    53AD62D11A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests */ = {\n\
+    53AD62D11A91208300115D9B /* ' + argv.proj + 'Tests */ = {\n\
       isa = PBXGroup;\n\
       children = (\n\
-        53AD62D41A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests.swift */,\n\
+        53AD62D41A91208300115D9B /* ' + argv.proj + 'Tests.swift */,\n\
         53AD62D21A91208300115D9B /* Supporting Files */,\n\
       );\n\
-      path = ' + argv.proj.toLowerCase() + 'Tests;\n\
+      path = ' + argv.proj + 'Tests;\n\
       sourceTree = "<group>";\n\
     };\n\
     53AD62D21A91208300115D9B /* Supporting Files */ = {\n\
@@ -712,9 +691,9 @@ exports.pbxproj = '// !$*UTF8*$!\n\
 /* End PBXGroup section */\n\
 \n\
 /* Begin PBXNativeTarget section */\n\
-    53AD62B81A91208300115D9B /* ' + argv.proj.toLowerCase() + ' */ = {\n\
+    53AD62B81A91208300115D9B /* ' + argv.proj + ' */ = {\n\
       isa = PBXNativeTarget;\n\
-      buildConfigurationList = 53AD62D81A91208300115D9B /* Build configuration list for PBXNativeTarget "' + argv.proj.toLowerCase() + '" */;\n\
+      buildConfigurationList = 53AD62D81A91208300115D9B /* Build configuration list for PBXNativeTarget "' + argv.proj + '" */;\n\
       buildPhases = (\n\
         53AD62B51A91208300115D9B /* Sources */,\n\
         53AD62B61A91208300115D9B /* Frameworks */,\n\
@@ -724,14 +703,14 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       );\n\
       dependencies = (\n\
       );\n\
-      name = ' + argv.proj.toLowerCase() + ';\n\
-      productName = ' + argv.proj.toLowerCase() + ';\n\
-      productReference = 53AD62B91A91208300115D9B /* ' + argv.proj.toLowerCase() + '.app */;\n\
+      name = ' + argv.proj + ';\n\
+      productName = ' + argv.proj + ';\n\
+      productReference = 53AD62B91A91208300115D9B /* ' + argv.proj + '.app */;\n\
       productType = "com.apple.product-type.application";\n\
     };\n\
-    53AD62CD1A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests */ = {\n\
+    53AD62CD1A91208300115D9B /* ' + argv.proj + 'Tests */ = {\n\
       isa = PBXNativeTarget;\n\
-      buildConfigurationList = 53AD62DB1A91208300115D9B /* Build configuration list for PBXNativeTarget "' + argv.proj.toLowerCase() + 'Tests" */;\n\
+      buildConfigurationList = 53AD62DB1A91208300115D9B /* Build configuration list for PBXNativeTarget "' + argv.proj + 'Tests" */;\n\
       buildPhases = (\n\
         53AD62CA1A91208300115D9B /* Sources */,\n\
         53AD62CB1A91208300115D9B /* Frameworks */,\n\
@@ -742,9 +721,9 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       dependencies = (\n\
         53AD62D01A91208300115D9B /* PBXTargetDependency */,\n\
       );\n\
-      name = ' + argv.proj.toLowerCase() + 'Tests;\n\
-      productName = ' + argv.proj.toLowerCase() + 'Tests;\n\
-      productReference = 53AD62CE1A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests.xctest */;\n\
+      name = ' + argv.proj + 'Tests;\n\
+      productName = ' + argv.proj + 'Tests;\n\
+      productReference = 53AD62CE1A91208300115D9B /* ' + argv.proj + 'Tests.xctest */;\n\
       productType = "com.apple.product-type.bundle.unit-test";\n\
     };\n\
 /* End PBXNativeTarget section */\n\
@@ -766,7 +745,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
           };\n\
         };\n\
       };\n\
-      buildConfigurationList = 53AD62B41A91208300115D9B /* Build configuration list for PBXProject "' + argv.proj.toLowerCase() + '" */;\n\
+      buildConfigurationList = 53AD62B41A91208300115D9B /* Build configuration list for PBXProject "' + argv.proj + '" */;\n\
       compatibilityVersion = "Xcode 3.2";\n\
       developmentRegion = English;\n\
       hasScannedForEncodings = 0;\n\
@@ -779,8 +758,8 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       projectDirPath = "";\n\
       projectRoot = "";\n\
       targets = (\n\
-        53AD62B81A91208300115D9B /* ' + argv.proj.toLowerCase() + ' */,\n\
-        53AD62CD1A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests */,\n\
+        53AD62B81A91208300115D9B /* ' + argv.proj + ' */,\n\
+        53AD62CD1A91208300115D9B /* ' + argv.proj + 'Tests */,\n\
       );\n\
     };\n\
 /* End PBXProject section */\n\
@@ -819,7 +798,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       isa = PBXSourcesBuildPhase;\n\
       buildActionMask = 2147483647;\n\
       files = (\n\
-        53AD62D51A91208300115D9B /* ' + argv.proj.toLowerCase() + 'Tests.swift in Sources */,\n\
+        53AD62D51A91208300115D9B /* ' + argv.proj + 'Tests.swift in Sources */,\n\
       );\n\
       runOnlyForDeploymentPostprocessing = 0;\n\
     };\n\
@@ -828,7 +807,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
 /* Begin PBXTargetDependency section */\n\
     53AD62D01A91208300115D9B /* PBXTargetDependency */ = {\n\
       isa = PBXTargetDependency;\n\
-      target = 53AD62B81A91208300115D9B /* ' + argv.proj.toLowerCase() + ' */;\n\
+      target = 53AD62B81A91208300115D9B /* ' + argv.proj + ' */;\n\
       targetProxy = 53AD62CF1A91208300115D9B /* PBXContainerItemProxy */;\n\
     };\n\
 /* End PBXTargetDependency section */\n\
@@ -884,7 +863,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
         ONLY_ACTIVE_ARCH = YES;\n\
         SDKROOT = iphoneos;\n\
         SWIFT_OPTIMIZATION_LEVEL = "-Onone";\n\
-        TARGETED_DEVICE_FAMILY = "1,2";\n\
+        TARGETED_DEVICE_FAMILY = "1";\n\
       };\n\
       name = Debug;\n\
     };\n\
@@ -919,7 +898,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
         IPHONEOS_DEPLOYMENT_TARGET = 8.1;\n\
         MTL_ENABLE_DEBUG_INFO = NO;\n\
         SDKROOT = iphoneos;\n\
-        TARGETED_DEVICE_FAMILY = "1,2";\n\
+        TARGETED_DEVICE_FAMILY = "1";\n\
         VALIDATE_PRODUCT = YES;\n\
       };\n\
       name = Release;\n\
@@ -930,11 +909,11 @@ exports.pbxproj = '// !$*UTF8*$!\n\
         ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;\n\
         ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;\n\
         CODE_SIGN_IDENTITY = "iPhone Developer";\n\
-        INFOPLIST_FILE = ' + argv.proj.toLowerCase() + '/Info.plist;\n\
+        INFOPLIST_FILE = ' + argv.proj + '/Info.plist;\n\
         IPHONEOS_DEPLOYMENT_TARGET = 7.0;\n\
         LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";\n\
         PRODUCT_NAME = "$(TARGET_NAME)";\n\
-        TARGETED_DEVICE_FAMILY = "1,2";\n\
+        TARGETED_DEVICE_FAMILY = "1";\n\
       };\n\
       name = Debug;\n\
     };\n\
@@ -944,11 +923,11 @@ exports.pbxproj = '// !$*UTF8*$!\n\
         ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;\n\
         ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;\n\
         CODE_SIGN_IDENTITY = "iPhone Developer";\n\
-        INFOPLIST_FILE = ' + argv.proj.toLowerCase() + '/Info.plist;\n\
+        INFOPLIST_FILE = ' + argv.proj + '/Info.plist;\n\
         IPHONEOS_DEPLOYMENT_TARGET = 7.0;\n\
         LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";\n\
         PRODUCT_NAME = "$(TARGET_NAME)";\n\
-        TARGETED_DEVICE_FAMILY = "1,2";\n\
+        TARGETED_DEVICE_FAMILY = "1";\n\
       };\n\
       name = Release;\n\
     };\n\
@@ -964,10 +943,10 @@ exports.pbxproj = '// !$*UTF8*$!\n\
           "DEBUG=1",\n\
           "$(inherited)",\n\
         );\n\
-        INFOPLIST_FILE = ' + argv.proj.toLowerCase() + 'Tests/Info.plist;\n\
+        INFOPLIST_FILE = ' + argv.proj + 'Tests/Info.plist;\n\
         LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";\n\
         PRODUCT_NAME = "$(TARGET_NAME)";\n\
-        TEST_HOST = "$(BUILT_PRODUCTS_DIR)/' + argv.proj.toLowerCase() + '.app/' + argv.proj.toLowerCase() + '";\n\
+        TEST_HOST = "$(BUILT_PRODUCTS_DIR)/' + argv.proj + '.app/' + argv.proj + '";\n\
       };\n\
       name = Debug;\n\
     };\n\
@@ -981,19 +960,19 @@ exports.pbxproj = '// !$*UTF8*$!\n\
         );\n\
         ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;\n\
         CODE_SIGN_IDENTITY = "iPhone Developer";\n\
-        INFOPLIST_FILE = ' + argv.proj.toLowerCase() + 'Tests/Info.plist;\n\
+        INFOPLIST_FILE = ' + argv.proj + 'Tests/Info.plist;\n\
         LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";\n\
         IPHONEOS_DEPLOYMENT_TARGET = 7.0;\n\
         PRODUCT_NAME = "$(TARGET_NAME)";\n\
-        TARGETED_DEVICE_FAMILY = "1,2";\n\
-        TEST_HOST = "$(BUILT_PRODUCTS_DIR)/' + argv.proj.toLowerCase() + '.app/' + argv.proj.toLowerCase() + '";\n\
+        TARGETED_DEVICE_FAMILY = "1";\n\
+        TEST_HOST = "$(BUILT_PRODUCTS_DIR)/' + argv.proj + '.app/' + argv.proj + '";\n\
       };\n\
       name = Release;\n\
     };\n\
 /* End XCBuildConfiguration section */\n\
 \n\
 /* Begin XCConfigurationList section */\n\
-    53AD62B41A91208300115D9B /* Build configuration list for PBXProject "' + argv.proj.toLowerCase() + '" */ = {\n\
+    53AD62B41A91208300115D9B /* Build configuration list for PBXProject "' + argv.proj + '" */ = {\n\
       isa = XCConfigurationList;\n\
       buildConfigurations = (\n\
         53AD62D61A91208300115D9B /* Debug */,\n\
@@ -1002,7 +981,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       defaultConfigurationIsVisible = 0;\n\
       defaultConfigurationName = Release;\n\
     };\n\
-    53AD62D81A91208300115D9B /* Build configuration list for PBXNativeTarget "' + argv.proj.toLowerCase() + '" */ = {\n\
+    53AD62D81A91208300115D9B /* Build configuration list for PBXNativeTarget "' + argv.proj + '" */ = {\n\
       isa = XCConfigurationList;\n\
       buildConfigurations = (\n\
         53AD62D91A91208300115D9B /* Debug */,\n\
@@ -1011,7 +990,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       defaultConfigurationIsVisible = 0;\n\
       defaultConfigurationName = Release;\n\
     };\n\
-    53AD62DB1A91208300115D9B /* Build configuration list for PBXNativeTarget "' + argv.proj.toLowerCase() + 'Tests" */ = {\n\
+    53AD62DB1A91208300115D9B /* Build configuration list for PBXNativeTarget "' + argv.proj + 'Tests" */ = {\n\
       isa = XCConfigurationList;\n\
       buildConfigurations = (\n\
         53AD62DC1A91208300115D9B /* Debug */,\n\
@@ -1135,7 +1114,7 @@ exports.testsPlist = '<?xml version="1.0" encoding="UTF-8"?>\n\
   <key>CFBundleExecutable</key>\n\
   <string>$(EXECUTABLE_NAME)</string>\n\
   <key>CFBundleIdentifier</key>\n\
-  <string>' + argv.proj.toLowerCase() + '.$(PRODUCT_NAME:rfc1034identifier)</string>\n\
+  <string>' + argv.proj + '.$(PRODUCT_NAME:rfc1034identifier)</string>\n\
   <key>CFBundleInfoDictionaryVersion</key>\n\
   <string>6.0</string>\n\
   <key>CFBundleName</key>\n\
@@ -1162,7 +1141,7 @@ exports.testsSwift = '//\n\
 import UIKit\n\
 import XCTest\n\
 \n\
-class ' + argv.proj.toLowerCase() + 'Tests: XCTestCase {\n\
+class ' + argv.proj + 'Tests: XCTestCase {\n\
     \n\
     override func setUp() {\n\
         super.setUp()\n\

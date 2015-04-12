@@ -15,6 +15,7 @@
   "author": "Robert Biggs",
   "license": "MIT",
   "dependencies": {
+    "cpr": "^0.4.0",
     "mkdirp": "^0.5.0",
     "ncp": "^2.0.0",
     "writefile": "^0.2.8",

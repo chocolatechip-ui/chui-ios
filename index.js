@@ -3,6 +3,7 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 var writefile = require('writefile');
 var ncp = require('ncp').ncp;
+var cpr = require('cpr');
 var argv = require('yargs').usage('Usage: --proj "myApp" --username "Joe" --chuiapp "~/Documents/myWebApp"').demand(['proj', 'username']).argv;
 var templates = require('./templates.js');
 var username = argv.username || 'joe';
@@ -22,7 +23,6 @@ var createProject = function() {
 
   mkdirp(appPath + argv.proj + '/' + argv.proj + '/' + '/Base.lproj/');
 
-
   // Create Swift files and Info.plist
   writefile(appPath + argv.proj + '/'  + argv.proj + '/AppDelegate.swift', templates.appDelegate, noop);
   writefile(appPath + argv.proj + '/'  + argv.proj + '/ViewController.swift', templates.viewController, noop);
@@ -33,47 +33,15 @@ var createProject = function() {
 
   // Create AppIcon Contents file:
   if (appicons) {
-    writefile(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/AppIcon.appiconset/Contents.json', templates.appiconsetWithIcons, function(err) {
-        fs.readdir(appicons, function(err, files) {
-          files.forEach(function(file) {
-            if (/Icon/.test(file)) {
-              var inStr = fs.createReadStream(appicons + '/' + file);
-              var outStr = fs.createWriteStream(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/AppIcon.appiconset/' + file);
-              inStr.pipe(outStr);
-            }
-          });
-        });
-              
-    });
+    cpr(appicons, appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/', noop);
+
   } else {
-    writefile(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/AppIcon.appiconset/Contents.json', templates.appiconsetWithoutIcons, noop);
+    cpr(__dirname + '/icons/', appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/', function(err) { console.log(err)});
   }
-  writefile(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/iTunesArtwork.imageset/Contents.json', templates.itunesartwork, function(err) {
-    if (appicons) {
-      fs.readdir(appicons, function(err, files) {
-        files.forEach(function(file) {
-          if (/iTunesArtwork/.test(file)) {
-            var inStr = fs.createReadStream(appicons + '/' + file);
-            var outStr = fs.createWriteStream(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/iTunesArtwork.imageset/' + file);
-            inStr.pipe(outStr);
-          }
-        });
-      });
-    }        
-  });
-  writefile(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/LaunchImage.launchimage/Contents.json', templates.launchimages, function(err) {
-    if (appicons) {
-      fs.readdir(appicons, function(err, files) {
-        files.forEach(function(file) {
-          if (/LaunchImage/.test(file)) {
-            var inStr = fs.createReadStream(appicons + '/' + file);
-            var outStr = fs.createWriteStream(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/LaunchImage.launchimage/' + file);
-            inStr.pipe(outStr);
-          }
-        });
-      });
-    }        
-  });
+  // Write JSON files for icons and launch images:
+  writefile(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/AppIcon.appiconset/Contents.json', templates.appiconset, noop);
+  writefile(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/iTunesArtwork.imageset/Contents.json', templates.itunesartwork, noop);
+  writefile(appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/LaunchImage.launchimage/Contents.json', templates.launchimages, noop);
 
   // Create xcuserdata files:
   writefile(appPath + argv.proj + '/'  + argv.proj + '.xcodeproj/xcuserdata/xcschemes/' + argv.proj + '.xcscheme', templates.xcscheme, noop);
