@@ -20,6 +20,5 @@
     "ncp": "^2.0.0",
     "writefile": "^0.2.8",
     "yargs": "^3.0.4"
-  },
-  "devDependencies": {}
+  }
 }
