@@ -1,12 +1,11 @@
 var argv = require('yargs').argv;
-var username = argv.username || "joe";
 
 exports.appDelegate = "//\n\
 //  AppDelegate.swift\n\
 //  " + argv.proj + "\n\
 //\n\
-//  Created by " + username + " on 2/15/15.\n\
-//  Copyright (c) 2015 " + username + ". All rights reserved.\n\
+//  Created by " + argv.username + " on 2/15/15.\n\
+//  Copyright (c) 2015 " + argv.username + ". All rights reserved.\n\
 //\n\
 \n\
 import UIKit\n\
@@ -44,8 +43,8 @@ exports.viewController = '//\n\
 //  ViewController.swift\n\
 //  ' + argv.proj + '\n\
 //\n\
-//  Created by ' + username + ' on 2/15/15.\n\
-//  Copyright (c) 2015 ' + username + '. All rights reserved.\n\
+//  Created by ' + argv.username + ' on 2/15/15.\n\
+//  Copyright (c) 2015 ' + argv.username + '. All rights reserved.\n\
 //\n\
 \n\
 import UIKit\n\
@@ -733,7 +732,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       isa = PBXProject;\n\
       attributes = {\n\
         LastUpgradeCheck = 0610;\n\
-        ORGANIZATIONNAME = "' + username + '";\n\
+        ORGANIZATIONNAME = "' + argv.username + '";\n\
         TargetAttributes = {\n\
           53AD62B81A91208300115D9B = {\n\
             CreatedOnToolsVersion = 6.1.1;\n\

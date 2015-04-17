@@ -6,7 +6,6 @@ var ncp = require('ncp').ncp;
 var cpr = require('cpr');
 var argv = require('yargs').usage('Usage: --proj "myApp" --username "Joe" --chuiapp "~/Documents/myWebApp"').demand(['proj', 'username']).argv;
 var templates = require('./templates.js');
-var username = argv.username || 'joe';
 var appPath = process.env.HOME + '/Desktop/';
 var appicons = argv.appicons;
 
