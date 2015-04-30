@@ -14,23 +14,25 @@ This will make this a global command-line tool, making it available regardless o
 
 ##Usage
 
-It expects the following parameters:
+***Note:*** As of version 1.0.4, chui-android uses the following parameters:
 
 - proj (the name of your project)
-- username (your username on your computer)
-- chuiapp (path to an existing ChUI Web app, otherwise it will create a default html page)
-- appicons (path of icons for the hybrid path)
+- user (your username on your computer)
+- app (path to an existing ChUI Web app, otherwise it will create a default html page)
+- icons (path of icons for the hybrid path)
 
-Both `--chuiapp` and `--appicons` are optional arguments. If you do not provide a path to a ChocolateChip-UI Web app for the `--chuiapp` argument, the Xcode project will be created with a default Web page. You can always drag and drop your ChococolateChip-UI app's resources to the project's Website folder later. Just make sure you app's file name is `index.html`. You will be replacing the default index.html file in the project.
+Earlier versions uses, username, chuiapp and appicons. Since the chui-android uses the shorter parameter names, we've update this to use the same ones.
+
+Both `--app` and `--icons` are optional arguments. If you do not provide a path to a ChocolateChip-UI Web app for the `--app` argument, the Xcode project will be created with a default Web page. You can always drag and drop your ChococolateChip-UI app's resources to the project's Website folder later. Just make sure you app's file name is `index.html`. You will be replacing the default index.html file in the project.
 
 The command is used as follows:
 
-    chui-ios --proj "Hamburger" --username "BongoBaby" --chuiapp /Users/bongobaby/Documents/hamburger --appicons /Users/bongobaby/Desktop/hambuger-icons
+    chui-ios --proj "Hamburger" --user "BongoBaby" --app /Users/bongobaby/Documents/hamburger --icons /Users/bongobaby/Desktop/hambuger-icons
 
 
 By default it outputs the resulting Xcode project to your desktop. If there is already a folder with the same name, the script will abort with a warning asking you to either delete the existing folder on the desktop, or change the name of the project you are trying to create. 
 
-You can add the path for the ChocolateChip-UI Web app you wish to convert into a hybrid app by dragging its folder onto the terminal with a space after the argument `--chuiapp`. This will put its contents into the `Website` folder of the hybrid app. Similarly, if you have icons, iTunes artwork and launch screens ready, you can drag the folder with them after the argument with a space: `--appicons`. If you do not provide a path for app icons, the command will create an Xcode project where the icons are missing. Xcode will alert you with warning messages about the missing icons, however this will not impede the ability to build the app and deloy to an iOS capable device for testing. 
+You can add the path for the ChocolateChip-UI Web app you wish to convert into a hybrid app by dragging its folder onto the terminal with a space after the argument `--app`. This will put its contents into the `Website` folder of the hybrid app. Similarly, if you have icons, iTunes artwork and launch screens ready, you can drag the folder with them after the argument with a space: `--icons`. If you do not provide a path for app icons, the command will create an Xcode project where the icons are missing. Xcode will alert you with warning messages about the missing icons, however this will not impede the ability to build the app and deloy to an iOS capable device for testing. 
 
 If you want to add icons through the script, make sure they are named as follows and have these resolutions/dimensions.
 
