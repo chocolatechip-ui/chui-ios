@@ -4,10 +4,12 @@ var mkdirp = require('mkdirp');
 var writefile = require('writefile');
 var ncp = require('ncp').ncp;
 var cpr = require('cpr');
-var argv = require('yargs').usage('Usage: --proj "myApp" --username "Joe" --chuiapp "~/Documents/myWebApp"').demand(['proj', 'username']).argv;
+var argv = require('yargs').usage('Usage: --proj "myApp" --user "Joe" --app "~/Documents/myWebApp" --icons "~/Documents/myWebApp_Icons').demand(['proj', 'user']).argv;
 var templates = require('./templates.js');
 var appPath = process.env.HOME + '/Desktop/';
-var appicons = argv.appicons;
+var user = argv.user;
+var app = argv.app;
+var icons = argv.icons;
 
 var noop = function() {};
 
@@ -31,8 +33,8 @@ var createProject = function() {
   writefile(appPath + argv.proj + '/'  + argv.proj + '/Base.lproj/Main.storyboard', templates.mainStoryboard, noop);
 
   // Create AppIcon Contents file:
-  if (appicons) {
-    cpr(appicons, appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/', noop);
+  if (icons) {
+    cpr(icons, appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/', noop);
 
   } else {
     cpr(__dirname + '/icons/', appPath + argv.proj + '/'  + argv.proj + '/Images.xcassets/', function(err) { console.log(err)});
@@ -59,10 +61,9 @@ var createProject = function() {
 
   // Check to see if user provided
   // a path to a Web app:
-  var chuiapp = argv.chuiapp;
-  if (chuiapp) {
+  if (app) {
     ncp.limit = 16;
-    ncp(chuiapp, appPath + argv.proj + '/Website/', noop);
+    ncp(app, appPath + argv.proj + '/Website/', noop);
   } 
   console.log('The project was successfully created. You may now open it in Xcode.')
 }

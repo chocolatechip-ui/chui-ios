@@ -1,11 +1,16 @@
+
+var argv = require('yargs').usage('Usage: --proj "myApp" --user "Joe" --app "~/Documents/myWebApp" --icons "~/Documents/myWebApp_Icons').demand(['proj', 'user']).argv;
 var argv = require('yargs').argv;
+var user = argv.user;
+var app = argv.app;
+var icons = argv.icons;
 
 exports.appDelegate = "//\n\
 //  AppDelegate.swift\n\
 //  " + argv.proj + "\n\
 //\n\
-//  Created by " + argv.username + " on 2/15/15.\n\
-//  Copyright (c) 2015 " + argv.username + ". All rights reserved.\n\
+//  Created by " + user + " on 2/15/15.\n\
+//  Copyright (c) 2015 " + user + ". All rights reserved.\n\
 //\n\
 \n\
 import UIKit\n\
@@ -43,8 +48,8 @@ exports.viewController = '//\n\
 //  ViewController.swift\n\
 //  ' + argv.proj + '\n\
 //\n\
-//  Created by ' + argv.username + ' on 2/15/15.\n\
-//  Copyright (c) 2015 ' + argv.username + '. All rights reserved.\n\
+//  Created by ' + user + ' on 2/15/15.\n\
+//  Copyright (c) 2015 ' + user + '. All rights reserved.\n\
 //\n\
 \n\
 import UIKit\n\
@@ -732,7 +737,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
       isa = PBXProject;\n\
       attributes = {\n\
         LastUpgradeCheck = 0610;\n\
-        ORGANIZATIONNAME = "' + argv.username + '";\n\
+        ORGANIZATIONNAME = "' + user + '";\n\
         TargetAttributes = {\n\
           53AD62B81A91208300115D9B = {\n\
             CreatedOnToolsVersion = 6.1.1;\n\
@@ -1133,8 +1138,8 @@ exports.testsSwift = '//\n\
 //  ' + argv.proj.toLowerCase() + 'Tests.swift\n\
 //  ' + argv.proj.toLowerCase() + 'Tests\n\
 //\n\
-//  Created by ' + argv.username + ' on 2/15/15.\n\
-//  Copyright (c) 2015 ' + argv.username + '. All rights reserved.\n\
+//  Created by ' + user + ' on 2/15/15.\n\
+//  Copyright (c) 2015 ' + user + '. All rights reserved.\n\
 //\n\
 \n\
 import UIKit\n\
