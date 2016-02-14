@@ -9,8 +9,8 @@ exports.appDelegate = "//\n\
 //  AppDelegate.swift\n\
 //  " + argv.proj + "\n\
 //\n\
-//  Created by " + user + " on 2/15/15.\n\
-//  Copyright (c) 2015 " + user + ". All rights reserved.\n\
+//  Created by " + user + " on 2/15/16.\n\
+//  Copyright (c) 2016 " + user + ". All rights reserved.\n\
 //\n\
 \n\
 import UIKit\n\
@@ -48,8 +48,8 @@ exports.viewController = '//\n\
 //  ViewController.swift\n\
 //  ' + argv.proj + '\n\
 //\n\
-//  Created by ' + user + ' on 2/15/15.\n\
-//  Copyright (c) 2015 ' + user + '. All rights reserved.\n\
+//  Created by ' + argv.proj + ' on 2/15/16.\n\
+//  Copyright (c) 2016 ' + user + '. All rights reserved.\n\
 //\n\
 \n\
 import UIKit\n\
@@ -69,7 +69,7 @@ class ViewController: UIViewController {\n\
         let url = NSURL.fileURLWithPath(html!)\n\
         \n\
         // Create a request object with the url object:\n\
-        let request = NSURLRequest(URL: url!)\n\
+        let request = NSURLRequest(URL: url)\n\
         \n\
         // Tell the Web view to load the url request object:\n\
         self.webView.loadRequest(request)\n\
@@ -736,7 +736,7 @@ exports.pbxproj = '// !$*UTF8*$!\n\
     53AD62B11A91208300115D9B /* Project object */ = {\n\
       isa = PBXProject;\n\
       attributes = {\n\
-        LastUpgradeCheck = 0610;\n\
+        LastUpgradeCheck = 0720;\n\
         ORGANIZATIONNAME = "' + user + '";\n\
         TargetAttributes = {\n\
           53AD62B81A91208300115D9B = {\n\
@@ -1008,7 +1008,6 @@ exports.pbxproj = '// !$*UTF8*$!\n\
   rootObject = 53AD62B11A91208300115D9B /* Project object */;\n\
 }';
 
-
 exports.html = '<!DOCTYPE html>\n\
 <html lang="en">\n\
 <head>\n\
@@ -1138,8 +1137,8 @@ exports.testsSwift = '//\n\
 //  ' + argv.proj.toLowerCase() + 'Tests.swift\n\
 //  ' + argv.proj.toLowerCase() + 'Tests\n\
 //\n\
-//  Created by ' + user + ' on 2/15/15.\n\
-//  Copyright (c) 2015 ' + user + '. All rights reserved.\n\
+//  Created by ' + user + ' on 2/15/16.\n\
+//  Copyright (c) 2016 ' + user + '. All rights reserved.\n\
 //\n\
 \n\
 import UIKit\n\
